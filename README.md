@@ -58,7 +58,7 @@ Les supports de cours sont disponibles en ligne :
 ## Comment travailler
 
 1. **Acceptez le devoir** en cliquant sur le lien Classroom du TP de la semaine
-2. **Ouvrez votre dépôt** dans GitHub Codespaces (bouton "Code" → "Codespaces" → "Create codespace on main")
+2. **Ouvrez votre dépôt** dans GitHub Codespaces (bouton "Code" -> "Codespaces" -> "Create codespace on main")
 3. **Lisez le README** du TP - il contient les objectifs, les explications et les exercices détaillés
 4. **Activez les tests** un par un et implémentez le code pour les faire passer (TDD baby steps)
 5. **Poussez votre code** régulièrement - votre score est calculé automatiquement à chaque push
@@ -85,4 +85,5 @@ Les supports de cours sont disponibles en ligne :
 
 ---
 
+<!-- Dernière mise à jour : 2026-04-19T07:38:09+02:00 -->
 *IUT d'Aix-Marseille - Département Informatique - 2025-2026*
