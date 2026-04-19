@@ -167,9 +167,9 @@ $CM_TABLE
 
 ## Évaluation
 
-- **TP (autograding)** : chaque TP est noté automatiquement sur 100 points. Votre score augmente à chaque test qui passe.
-- **CC2** : évaluation dirigée + QCM
-- **CC3** : mini-application en 4h (tout ce qui a été vu en TP)
+- **CC1** : note d'évaluation de TP - autograding sur 100 points, votre score augmente à chaque test qui passe (coeff. 10)
+- **CC2** : participation et implication (coeff. 10)
+- **CC3** : mini-application JavaFX sur feuille (coeff. 40)
 
 ---
 
