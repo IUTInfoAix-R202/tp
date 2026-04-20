@@ -49,7 +49,7 @@ Les supports de cours sont disponibles en ligne :
 | CM | Thème | Slides |
 |---|---|---|
 | CM1 | Fondations de l'IHM et première immersion JavaFX | [Voir les slides](https://iutinfoaix-r202.github.io/cours/cm1-fondations-ihm.html) |
-| CM2 | Propriétés, bindings et contrôles | *à venir* |
+| CM2 | Propriétés, bindings et contrôles | [Voir les slides](https://iutinfoaix-r202.github.io/cours/cm2-donnees-et-liaison.html) |
 | CM3 | Architecture des IHM et FXML | *à venir* |
 | CM4 | MVVM, persistance et synthèse | *à venir* |
 
@@ -85,5 +85,5 @@ Les supports de cours sont disponibles en ligne :
 
 ---
 
-<!-- Dernière mise à jour : 2026-04-19T07:40:32+02:00 -->
+<!-- Dernière mise à jour : 2026-04-20T15:43:46+02:00 -->
 *IUT d'Aix-Marseille - Département Informatique - 2025-2026*
