@@ -142,6 +142,21 @@ Chaque semaine, un nouveau TP est à réaliser. Cliquez sur le lien Classroom co
 
 $TP_TABLE
 
+> [!WARNING]
+> **Erreur "Repository Access Issue" après avoir accepté un devoir ?**
+>
+> Il arrive que Classroom affiche l'écran *"You no longer have access to your assignment repository. Contact your teacher for support"* au lieu de vous rediriger vers votre dépôt. **Pas de panique** : votre dépôt **a bien été créé**, c'est juste la redirection qui a échoué.
+>
+> Pour le retrouver :
+> 1. Ouvrez directement votre dépôt à l'adresse :
+>    \`\`\`
+>    https://github.com/IUTInfoAix-R202-2026/tpN-VOTRE_LOGIN_GITHUB
+>    \`\`\`
+>    (remplacez \`N\` par le numéro du TP et \`VOTRE_LOGIN_GITHUB\` par votre identifiant GitHub)
+> 2. Ou parcourez la liste de vos dépôts sur <https://github.com/IUTInfoAix-R202-2026> — vous devriez y voir le vôtre.
+>
+> Si vraiment vous ne trouvez pas, contactez votre enseignant·e, il/elle pourra vérifier la création côté admin.
+
 ---
 
 ## Cours magistraux
