@@ -36,7 +36,7 @@ Chaque semaine, un nouveau TP est à réaliser. Cliquez sur le lien Classroom co
 |---|---|---|---|
 | 1 | **TP1 - Bases JavaFX** | Stage, Scene, Node, layouts, événements | [Accepter le TP1](https://classroom.github.com/a/9gAbmj0v) |
 | 2 | **TP2 - Propriétés et bindings** | IntegerProperty, bind, bindBidirectional, ChangeListener | [Accepter le TP2](https://classroom.github.com/a/o8W7l2oc) |
-| 3 | **TP3 - FXML** | Interface déclarative, FXMLLoader, contrôleurs, CSS | *à venir* |
+| 3 | **TP3 - FXML** | Interface déclarative, FXMLLoader, contrôleurs, CSS | [Accepter le TP3](https://classroom.github.com/a/furMyUIZ) |
 | 4 | **TP4 - MVVM** | Architecture Model-View-ViewModel, testabilité | *à venir* |
 | 5 | **TP5 - Persistance** | JDBC, JPA, DAO, bases de données | *à venir* |
 
@@ -100,5 +100,5 @@ Les supports de cours sont disponibles en ligne :
 
 ---
 
-<!-- Dernière mise à jour : 2026-04-22T15:38:43+02:00 -->
+<!-- Dernière mise à jour : 2026-04-22T15:44:04+02:00 -->
 *IUT d'Aix-Marseille - Département Informatique - 2025-2026*
