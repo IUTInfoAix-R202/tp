@@ -153,7 +153,7 @@ $TP_TABLE
 >    https://github.com/IUTInfoAix-R202-2026/tpN-VOTRE_LOGIN_GITHUB
 >    \`\`\`
 >    (remplacez \`N\` par le numéro du TP et \`VOTRE_LOGIN_GITHUB\` par votre identifiant GitHub)
-> 2. Ou parcourez la liste de vos dépôts sur <https://github.com/IUTInfoAix-R202-2026> — vous devriez y voir le vôtre.
+> 2. Ou parcourez la liste de vos dépôts sur <https://github.com/IUTInfoAix-R202-2026> - vous devriez y voir le vôtre.
 >
 > Si vraiment vous ne trouvez pas, contactez votre enseignant·e, il/elle pourra vérifier la création côté admin.
 
