@@ -1,21 +1,17 @@
-# <img src="https://raw.githubusercontent.com/IUTInfoAix-R510/Syllabus/main/assets/logo.png" alt="class logo" class="logo"/> R2.02 - Développement d'applications avec IHM
+# <img src=".github/assets/logo.png" alt="class logo" class="logo" width="120"/> R2.02 - Développement d'applications avec IHM
 
 ### IUT d'Aix-Marseille - Département Informatique Aix-en-Provence
 
-* **Ressource :** [R2.02](https://cache.media.enseignementsup-recherche.gouv.fr/file/SPE4-MESRI-17-6-2021/35/5/Annexe_17_INFO_BUT_annee_1_1411355.pdf)
+* **Ressource :** [Syllabus R2.02](https://github.com/IUTInfoAix-R202/syllabus) (compétences, calendrier, évaluations, ressources détaillées)
 
-* **Responsable :**
+* **Équipe pédagogique :**
 
-  * [Sébastien Nedjar](mailto:sebastien.nedjar@univ-amu.fr)
-
-* **Enseignants :**
-
+  * [Sébastien Nedjar](mailto:sebastien.nedjar@univ-amu.fr) - responsable du module
   * [Frédéric Flouvat](mailto:frederic.flouvat@univ-amu.fr)
   * [Sophie Nabitz](mailto:sophie.nabitz@univ-avignon.fr)
   * [Samir Chtioui](mailto:samir.chtioui@gmail.com)
 
-* **Besoin d'aide ?**
-    * [Email](mailto:sebastien.nedjar@univ-amu.fr) pour toute question
+* **Besoin d'aide ?** [Email](mailto:sebastien.nedjar@univ-amu.fr) pour toute question
 
 ---
 
