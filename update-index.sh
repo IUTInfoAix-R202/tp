@@ -161,15 +161,15 @@ $TP_TABLE
 >
 > Il arrive que Classroom affiche l'écran *"You no longer have access to your assignment repository. Contact your teacher for support"* au lieu de vous rediriger vers votre dépôt. **Pas de panique** : votre dépôt **a bien été créé**, c'est juste la redirection qui a échoué.
 >
-> Pour le retrouver :
-> 1. Ouvrez directement votre dépôt à l'adresse :
+> Marche à suivre :
+> 1. **Vérifiez votre boîte mail** : au moment de l'acceptation du devoir, GitHub vous envoie une invitation à rejoindre le dépôt. Accepter cette invitation débloque souvent l'accès.
+> 2. Si vous n'avez pas reçu cet email, ouvrez directement votre dépôt à l'adresse :
 >    \`\`\`
 >    https://github.com/IUTInfoAix-R202-2026/tpN-VOTRE_LOGIN_GITHUB
 >    \`\`\`
 >    (remplacez \`N\` par le numéro du TP et \`VOTRE_LOGIN_GITHUB\` par votre identifiant GitHub)
-> 2. Ou parcourez la liste de vos dépôts sur <https://github.com/IUTInfoAix-R202-2026> - vous devriez y voir le vôtre.
->
-> Si vraiment vous ne trouvez pas, contactez l'équipe pédagogique qui pourra vérifier la création côté admin.
+> 3. Ou parcourez la liste de vos dépôts sur <https://github.com/IUTInfoAix-R202-2026> - vous devriez y voir le vôtre.
+> 4. Si rien de tout ça ne débloque la situation, demandez à l'équipe pédagogique de vous attribuer manuellement les droits en écriture sur votre dépôt.
 
 ---
 
