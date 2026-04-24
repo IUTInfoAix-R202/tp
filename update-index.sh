@@ -1,25 +1,36 @@
 #!/bin/bash
-# Génère automatiquement la table des TP dans README.md
-# en lisant les liens Classroom depuis chaque repo tpN.
+# Génère automatiquement la table des TP et des CM dans README.md
+# en s'appuyant sur la config TPS / CMS ci-dessous.
 #
 # Usage : ./update-index.sh
-# Nécessite : gh (GitHub CLI) authentifié
+# Nécessite : gh (GitHub CLI) authentifié, python3, curl, base64
+#
+# Convention :
+# - TPS config : numéro|titre|thème|répartition|status
+#   * status = published (lien Classroom exposé aux étudiants)
+#   * status = draft      (affiché "à venir" même si un lien Classroom
+#                          existe dans le repo - utile pendant la
+#                          rédaction d'un TP)
+# - CMS config : numéro|titre|slug du fichier
+#   * Le script détecte automatiquement si le CM est publié sur
+#     GitHub Pages (fichier HTML accessible) et affiche le lien ou
+#     "à venir" selon.
 
 set -euo pipefail
 
 ORG="IUTInfoAix-R202"
 COURS_URL="https://iutinfoaix-r202.github.io/cours"
 
-# Configuration des TP : numéro|titre|thème|semaine
+# Configuration des TP
 TPS=(
-  "1|Bases JavaFX|Stage, Scene, Node, layouts, événements|1"
-  "2|Propriétés et bindings|IntegerProperty, bind, bindBidirectional, ChangeListener|2"
-  "3|FXML|Interface déclarative, FXMLLoader, contrôleurs, CSS|3"
-  "4|MVVM|Architecture Model-View-ViewModel, testabilité|4"
-  "5|Persistance|JDBC, JPA, DAO, bases de données|5"
+  "1|Bases JavaFX|Stage, Scene, Node, layouts, événements|s1-s2 (6 h)|published"
+  "2|Propriétés et bindings|IntegerProperty, bind, bindBidirectional, ChangeListener|s2-s3 (8 h)|published"
+  "3|FXML|Interface déclarative, FXMLLoader, contrôleurs, CSS|s4 (8 h)|draft"
+  "4|MVVM|Architecture Model-View-ViewModel, testabilité|s6 (8 h)|draft"
+  "5|Persistance|JDBC, JPA, DAO, bases de données (slot SAÉ, compte CC1 R2.02)|s7 (4 h)|draft"
 )
 
-# Configuration des CM : numéro|titre|slug du fichier
+# Configuration des CM
 CMS=(
   "1|Fondations de l'IHM et première immersion JavaFX|cm1-fondations-ihm"
   "2|Propriétés, bindings et contrôles|cm2-donnees-et-liaison"
@@ -65,23 +76,30 @@ check_cm_exists() {
 echo "Génération de l'index des TP..."
 
 # Construire la table des TP
-TP_TABLE="| Semaine | TP | Thème | Lien Classroom |
+TP_TABLE="| Répartition | TP | Thème | Accès |
 |---|---|---|---|"
 
 for tp_config in "${TPS[@]}"; do
-  IFS='|' read -r num titre theme semaine <<< "$tp_config"
+  IFS='|' read -r num titre theme repartition status <<< "$tp_config"
   repo="tp$num"
-  echo -n "  TP$num ($titre)... "
+  echo -n "  TP$num ($titre) [$status]... "
 
-  link=$(get_classroom_link "$repo" 2>/dev/null || true)
-  if [ -n "$link" ]; then
-    TP_TABLE="$TP_TABLE
-| $semaine | **TP$num - $titre** | $theme | [Accepter le TP$num]($link) |"
-    echo "OK ($link)"
+  if [ "$status" = "published" ]; then
+    link=$(get_classroom_link "$repo" 2>/dev/null || true)
+    if [ -n "$link" ]; then
+      TP_TABLE="$TP_TABLE
+| $repartition | **TP$num - $titre** | $theme | [Accepter le TP$num]($link) |"
+      echo "OK ($link)"
+    else
+      # Status=published mais aucun lien Classroom détecté : bug de config ou repo vide
+      TP_TABLE="$TP_TABLE
+| $repartition | **TP$num - $titre** | $theme | *lien manquant* |"
+      echo "ERREUR : status=published mais aucun lien Classroom trouvé"
+    fi
   else
     TP_TABLE="$TP_TABLE
-| $semaine | **TP$num - $titre** | $theme | *à venir* |"
-    echo "pas encore publié"
+| $repartition | **TP$num - $titre** | $theme | *à venir* |"
+    echo "draft (lien non exposé)"
   fi
 done
 
@@ -106,35 +124,31 @@ done
 
 # Générer le README complet
 cat > README.md << HEREDOC
-# <img src="https://raw.githubusercontent.com/IUTInfoAix-R510/Syllabus/main/assets/logo.png" alt="class logo" class="logo"/> R2.02 - Développement d'applications avec IHM
+# <img src=".github/assets/logo.png" alt="class logo" class="logo" width="120"/> R2.02 - Développement d'applications avec IHM
 
 ### IUT d'Aix-Marseille - Département Informatique Aix-en-Provence
 
-* **Ressource :** [R2.02](https://cache.media.enseignementsup-recherche.gouv.fr/file/SPE4-MESRI-17-6-2021/35/5/Annexe_17_INFO_BUT_annee_1_1411355.pdf)
+* **Ressource :** [Syllabus R2.02](https://github.com/IUTInfoAix-R202/syllabus) (compétences, calendrier, évaluations, ressources détaillées)
 
-* **Responsable :**
+* **Équipe pédagogique :**
 
-  * [Sébastien Nedjar](mailto:sebastien.nedjar@univ-amu.fr)
-
-* **Enseignants :**
-
+  * [Sébastien Nedjar](mailto:sebastien.nedjar@univ-amu.fr) - responsable du module
   * [Frédéric Flouvat](mailto:frederic.flouvat@univ-amu.fr)
   * [Sophie Nabitz](mailto:sophie.nabitz@univ-avignon.fr)
   * [Samir Chtioui](mailto:samir.chtioui@gmail.com)
 
-* **Besoin d'aide ?**
-    * [Email](mailto:sebastien.nedjar@univ-amu.fr) pour toute question
+* **Besoin d'aide ?** [Email](mailto:sebastien.nedjar@univ-amu.fr) pour toute question
 
 ---
 
 ## Bienvenue
 
-Ce module vous apprend à **concevoir et développer des applications avec une interface graphique** (IHM) en Java avec JavaFX. Au fil des 5 TP, vous construirez progressivement les compétences nécessaires pour réaliser la **SAE 2.01** : une interface d'extraction et de manipulation de données pour des capteurs de détection de chauve-souris.
+Ce module vous apprend à **concevoir et développer des applications avec une interface graphique** (IHM) en Java avec JavaFX. Au fil des 5 TP, vous construirez progressivement les compétences nécessaires pour réaliser la **SAÉ 2.01** : une interface d'extraction et de manipulation de données pour des capteurs de détection de chauves-souris.
 
-Chaque semaine, un nouveau TP est à réaliser. Cliquez sur le lien Classroom correspondant pour créer votre dépôt personnel, puis ouvrez-le dans GitHub Codespaces pour travailler directement dans le navigateur.
+Les TP sont distribués via **GitHub Classroom** : chaque acceptation crée automatiquement un dépôt personnel dans l'organisation \`IUTInfoAix-R202-2026\`. Ouvrez-le dans **GitHub Codespaces** pour travailler directement dans le navigateur.
 
 > [!IMPORTANT]
-> Pour chaque TP, vous devez **accepter le devoir** via le lien Classroom ci-dessous. Cela crée automatiquement un dépôt à votre nom dans l'organisation \`IUTInfoAix-R202-2026\`. C'est dans ce dépôt que vous travaillez et que votre progression est évaluée automatiquement.
+> Pour chaque TP, vous devez **accepter le devoir** via le lien Classroom ci-dessous. C'est dans votre dépôt personnel que vous travaillez et que votre progression est évaluée automatiquement. Le calendrier détaillé (répartition des TP sur les semaines) est publié dans le [syllabus](https://github.com/IUTInfoAix-R202/syllabus).
 
 ---
 
@@ -155,7 +169,7 @@ $TP_TABLE
 >    (remplacez \`N\` par le numéro du TP et \`VOTRE_LOGIN_GITHUB\` par votre identifiant GitHub)
 > 2. Ou parcourez la liste de vos dépôts sur <https://github.com/IUTInfoAix-R202-2026> - vous devriez y voir le vôtre.
 >
-> Si vraiment vous ne trouvez pas, contactez votre enseignant·e, il/elle pourra vérifier la création côté admin.
+> Si vraiment vous ne trouvez pas, contactez l'équipe pédagogique qui pourra vérifier la création côté admin.
 
 ---
 
@@ -182,16 +196,18 @@ $CM_TABLE
 
 ## Évaluation
 
-- **CC1** : note d'évaluation de TP - autograding sur 100 points, votre score augmente à chaque test qui passe (coeff. 10)
+- **CC1** : moyenne des notes autograding des TP (score affiché sur 1000 par Classroom, ramené sur 20 au bulletin en divisant par 50 ; votre score augmente à chaque test qui passe) - coeff. 10
 - **CC2** : participation et implication (coeff. 10)
 - **CC3** : mini-application JavaFX sur feuille (coeff. 40)
+
+Pour les grilles détaillées (CC2 et CC3), voir le [syllabus](https://github.com/IUTInfoAix-R202/syllabus).
 
 ---
 
 ## Environnement technique
 
 - **Java 25** + **JavaFX 25**
-- **Maven** (via le wrapper \`./mvnw\` - aucune installation nécessaire)
+- **Apache Maven 3.9.14 via Maven Wrapper** (\`./mvnw\` fourni, aucune installation nécessaire)
 - **GitHub Codespaces** (environnement de développement dans le navigateur)
 - **TestFX** + JUnit 5 + AssertJ (tests automatiques)
 
