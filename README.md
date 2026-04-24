@@ -81,7 +81,7 @@ Les supports de cours sont disponibles en ligne :
 
 ## Évaluation
 
-- **CC1** : note d'évaluation de TP - autograding sur 100 points, votre score augmente à chaque test qui passe (coeff. 10)
+- **CC1** : moyenne des notes autograding des TP (score affiché sur 1000 par Classroom, ramené sur 20 au bulletin en divisant par 50 ; votre score augmente à chaque test qui passe) - coeff. 10
 - **CC2** : participation et implication (coeff. 10)
 - **CC3** : mini-application JavaFX sur feuille (coeff. 40)
 
