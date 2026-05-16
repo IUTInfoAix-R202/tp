@@ -87,6 +87,9 @@ Les supports de cours sont disponibles en ligne :
 
 Pour les grilles détaillées (CC2 et CC3), voir le [syllabus](https://github.com/IUTInfoAix-R202/syllabus).
 
+> [!TIP]
+> **Pour s'entraîner au CC3** : le dépôt [**`testIHM`**](https://github.com/IUTInfoAix-R202/testIHM) regroupe 10 sujets de tests d'IHM 2013-2022 (Morpion, Othello, Mastermind, Taquin, Lights Out, Tracé de fonction, Wordle…) - tous compilent et tournent sur la même stack Java 25 / JavaFX 25 / Maven Wrapper que vos TPs, avec 116 tests fonctionnels en CI. Idéal pour s'entraîner à composer des applications graphiques complètes en temps limité.
+
 ---
 
 ## Environnement technique
