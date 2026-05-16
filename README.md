@@ -32,7 +32,7 @@ Les TP sont distribués via **GitHub Classroom** : chaque acceptation crée auto
 |---|---|---|---|
 | s1-s2 (6 h) | **TP1 - Bases JavaFX** | Stage, Scene, Node, layouts, événements | [Accepter le TP1](https://classroom.github.com/a/9gAbmj0v) |
 | s2-s3 (8 h) | **TP2 - Propriétés et bindings** | IntegerProperty, bind, bindBidirectional, ChangeListener | [Accepter le TP2](https://classroom.github.com/a/o8W7l2oc) |
-| s4 (8 h) | **TP3 - FXML** | Interface déclarative, FXMLLoader, contrôleurs, CSS | *à venir* |
+| s4 (8 h) | **TP3 - FXML** | Interface déclarative, FXMLLoader, contrôleurs, CSS | [Accepter le TP3](https://classroom.github.com/a/furMyUIZ) |
 | s6 (8 h) | **TP4 - MVVM** | Architecture Model-View-ViewModel, testabilité | *à venir* |
 | s7 (4 h) | **TP5 - Persistance** | JDBC, JPA, DAO, bases de données (slot SAÉ, compte CC1 R2.02) | *à venir* |
 
@@ -61,8 +61,8 @@ Les supports de cours sont disponibles en ligne :
 |---|---|---|
 | CM1 | Fondations de l'IHM et première immersion JavaFX | [Voir les slides](https://iutinfoaix-r202.github.io/cours/cm1-fondations-ihm.html) |
 | CM2 | Propriétés, bindings et contrôles | [Voir les slides](https://iutinfoaix-r202.github.io/cours/cm2-donnees-et-liaison.html) |
-| CM3 | Architecture des IHM et FXML | *à venir* |
-| CM4 | MVVM, persistance et synthèse | *à venir* |
+| CM3 | Architecture des IHM et FXML | [Voir les slides](https://iutinfoaix-r202.github.io/cours/cm3-architecture-fxml.html) |
+| CM4 | MVVM, persistance et synthèse | [Voir les slides](https://iutinfoaix-r202.github.io/cours/cm4-mvvm-persistance.html) |
 
 ---
 
@@ -101,5 +101,5 @@ Pour les grilles détaillées (CC2 et CC3), voir le [syllabus](https://github.co
 
 ---
 
-<!-- Dernière mise à jour : 2026-04-24T19:42:20+02:00 -->
+<!-- Dernière mise à jour : 2026-05-16T14:13:39+02:00 -->
 *IUT d'Aix-Marseille - Département Informatique - 2025-2026*
